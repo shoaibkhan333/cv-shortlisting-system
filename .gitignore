@@ -1,0 +1,22 @@
+# Uploads (user files)
+uploads/*
+!uploads/.gitkeep
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vercel
+.vercel
+
+# Logs
+*.log

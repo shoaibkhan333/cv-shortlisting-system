@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automating Resume Shortlisting System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(120deg, #0d6efd 0%, #6c63ff 100%);
+            color: #fff;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .hero .btn-group .btn {
+            font-size: 1.1rem;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            margin: 0 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero .btn-group .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .main {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            padding: 2rem 2.5rem;
+        }
+        .main h2 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .main p {
+            color: #555;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #fff;
+            opacity: 0.7;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .main { padding: 1rem; }
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"> Automating CV Shortlisting</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero" data-bs-toggle="tooltip" title="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section" data-bs-toggle="tooltip" title="About the system">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section" data-bs-toggle="tooltip" title="Contact us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./auth/login.php" data-bs-toggle="tooltip" title="Login to your account">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./auth/signup.php" data-bs-toggle="tooltip" title="Create a new account">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <h1>Welcome to Resume Shortlisting</h1>
+        <p>Empowering recruiters and job seekers with smart, automated CV shortlisting.<br>Get started by logging in or registering below.</p>
+        <div class="btn-group">
+            <a href="./auth/login.php" class="btn btn-light text-primary fw-bold shadow" data-bs-toggle="tooltip" title="Login to your account">Login</a>
+            <a href="./auth/signup.php" class="btn btn-outline-light fw-bold shadow" data-bs-toggle="tooltip" title="Create a new account">Register</a>
+        </div>
+        <div class="scroll-down" style="cursor:pointer;">
+            <i class="bi bi-chevron-double-down"></i>
+        </div>
+    </section>
+
+    <div class="main" id="about-section">
+        <h2 class="text-primary mb-4"><i class="bi bi-info-circle"></i> About the System</h2>
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6">
+                <ul class="list-unstyled fs-5">
+                    <li class="mb-3"><i class="bi bi-lightning-charge text-primary me-2"></i>Smart, automated CV shortlisting</li>
+                    <li class="mb-3"><i class="bi bi-person-plus text-primary me-2"></i>  Easy registration and login</li>
+                    <li class="mb-3"><i class="bi bi-speedometer2 text-primary me-2"></i>Modern, responsive dashboard</li>
+                    <li class="mb-3"><i class="bi bi-shield-lock text-primary me-2"></i>Secure document uploads</li>
+                    <li class="mb-3"><i class="bi bi-bell text-primary me-2"></i>Real-time feedback and notifications</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 bg-light rounded shadow-sm">
+                    <h5 class="fw-bold mb-2">Why Choose Us?</h5>
+                    <p class="mb-0">Our Resume Shortlisting System leverages modern technology to help recruiters quickly identify the best candidates for any job. Candidates can easily create and manage their profiles, upload their resumes, and apply for jobs. Recruiters benefit from automated shortlisting, advanced filtering, and a user-friendly dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main mt-5" id="contact-section">
+        <h2 class="text-primary mb-4"><i class="bi bi-envelope"></i> Contact Us</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="contactSuccess" class="alert alert-success mt-3 d-none">Thank you for contacting us! We'll get back to you soon.</div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="bg-light rounded p-4 h-100 shadow-sm">
+                    <h5 class="fw-bold mb-3">Contact Information</h5>
+                    <p class="mb-2"><i class="bi bi-envelope-at text-primary me-2"></i> shoaibnaaz333@gmail.com</p>
+                    <p class="mb-2"><i class="bi bi-telephone text-primary me-2"></i> +92341-1664464</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Lakki Marwat, KPK, Pakistan</p>
+                    <div class="mt-3">
+                        <a href="#" class="me-2 text-primary" data-bs-toggle="tooltip" title="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-2 text-primary" data-bs-toggle="tooltip" title="Twitter"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="me-2 text-primary" data-bs-toggle="tooltip" title="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5 bg-primary text-white">
+        &copy; <span id="year"></span> Resume Shortlisting System. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+    <script>
+        // Enable Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        // Smooth scroll to sections
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        // Scroll down arrow
+        document.querySelector('.scroll-down').addEventListener('click', function() {
+            document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
+        });
+        // Contact form feedback
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').classList.remove('d-none');
+            this.reset();
+        });
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
