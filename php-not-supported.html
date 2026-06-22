@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHP not available on Vercel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 640px;">
+      <div class="card-body p-4">
+        <h1 class="h4 text-danger mb-3">Login / Signup does not work on Vercel</h1>
+        <p>Vercel only hosts static files. It cannot run PHP or MySQL, so login and signup pages download instead of opening.</p>
+        <p class="mb-1"><strong>Use one of these instead:</strong></p>
+        <ul>
+          <li><strong>Local (XAMPP):</strong> <code>http://localhost:8000/auth/login.php</code></li>
+          <li><strong>Render (online PHP):</strong> deploy from GitHub → set <code>config.js</code> with your Render URL</li>
+        </ul>
+        <a href="/" class="btn btn-primary mt-2">Back to home</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

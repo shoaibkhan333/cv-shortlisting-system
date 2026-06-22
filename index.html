@@ -104,10 +104,10 @@
                         <a class="nav-link" href="#contact-section" data-bs-toggle="tooltip" title="Contact us">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./auth/login.php" data-bs-toggle="tooltip" title="Login to your account">Login</a>
+                        <a class="nav-link app-auth-link" href="./auth/login.php" data-auth-path="/auth/login.php" data-bs-toggle="tooltip" title="Login to your account">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./auth/signup.php" data-bs-toggle="tooltip" title="Create a new account">Register</a>
+                        <a class="nav-link app-auth-link" href="./auth/signup.php" data-auth-path="/auth/signup.php" data-bs-toggle="tooltip" title="Create a new account">Register</a>
                     </li>
                 </ul>
             </div>
@@ -118,8 +118,8 @@
         <h1>Welcome to Resume Shortlisting</h1>
         <p>Empowering recruiters and job seekers with smart, automated CV shortlisting.<br>Get started by logging in or registering below.</p>
         <div class="btn-group">
-            <a href="./auth/login.php" class="btn btn-light text-primary fw-bold shadow" data-bs-toggle="tooltip" title="Login to your account">Login</a>
-            <a href="./auth/signup.php" class="btn btn-outline-light fw-bold shadow" data-bs-toggle="tooltip" title="Create a new account">Register</a>
+            <a href="./auth/login.php" data-auth-path="/auth/login.php" class="btn btn-light text-primary fw-bold shadow app-auth-link" data-bs-toggle="tooltip" title="Login to your account">Login</a>
+            <a href="./auth/signup.php" data-auth-path="/auth/signup.php" class="btn btn-outline-light fw-bold shadow app-auth-link" data-bs-toggle="tooltip" title="Create a new account">Register</a>
         </div>
         <div class="scroll-down" style="cursor:pointer;">
             <i class="bi bi-chevron-double-down"></i>
@@ -190,7 +190,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+    <script src="config.js"></script>
     <script>
+        // Point login/register to PHP backend (Render/XAMPP), not Vercel static host
+        document.querySelectorAll('.app-auth-link').forEach(function(link) {
+            var path = link.getAttribute('data-auth-path');
+            if (path && window.APP_URL) {
+                link.href = window.APP_URL.replace(/\/$/, '') + path;
+            }
+        });
         // Enable Bootstrap tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
