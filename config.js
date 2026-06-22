@@ -1,5 +1,5 @@
 // PHP backend URL — required when the landing page is on Vercel.
-// Leave empty ('') when running on XAMPP or Render (same host as PHP).
-// After deploying to Render, paste your Render URL here, e.g.:
-// window.APP_URL = 'https://cv-shortlisting-system.onrender.com';
+// Set this to your InfinityFree (or other PHP host) URL after upload.
+// Example: window.APP_URL = 'https://cvshortlisting.infinityfreeapp.com';
+// Leave empty when opening the site directly on PHP hosting or localhost.
 window.APP_URL = '';

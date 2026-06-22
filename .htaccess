@@ -1,0 +1,12 @@
+# If using Apache (InfinityFree, 000webhost, XAMPP)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block direct access to includes folder
+    RewriteRule ^includes/ - [F,L]
+</IfModule>
+
+# Allow file uploads
+php_value upload_max_filesize 10M
+php_value post_max_size 12M
